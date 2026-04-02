@@ -1,10 +1,10 @@
-# 🚀 Hyperbridge Integration Guide
+# [Hyperbridge](https://hyperbridge.network/) Integration Guide
 
 ## 📘 Overview
 
 This guide walks through the steps required to integrate **Hyperbridge** for cross-chain asset transfers between:
 
-- Substrate (e.g. Polkadex)
+- Substrate
 - EVM (e.g. Sepolia)
 
 ---
