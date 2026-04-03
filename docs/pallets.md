@@ -88,3 +88,23 @@ impl pallet_token_gateway::Config for Runtime {
     type WeightInfo = ();
 }
 ```
+
+Add the pallet ismp grandpa configuration
+
+```rust
+impl ismp_grandpa::Config for Runtime {
+	type RuntimeEvent = RuntimeEvent;
+	type IsmpHost = Ismp;
+	type WeightInfo = ismp_grandpa_weight::WeightInfo<Runtime>;
+	type RootOrigin = EnsureRoot<AccountId>; // Can add council as well
+}
+```
+
+Add the pallet hyperbridge configuration
+
+```rust
+impl pallet_hyperbridge::Config for Runtime {
+	type RuntimeEvent = RuntimeEvent;
+	type IsmpHost = Ismp;
+}
+```
