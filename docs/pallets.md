@@ -66,6 +66,15 @@ impl IsmpRouter for Router {
 Add the pallet token gateway configuration
 
 ```rust
+// Should provide an account that is funded and can be used to pay for asset creation
+pub struct AssetAdmin;
+
+impl Get<AccountId> for AssetAdmin {
+	fn get() -> AccountId {
+		Treasury::account_id()
+	}
+}
+
 impl pallet_token_gateway::Config for Runtime {
     type RuntimeEvent = RuntimeEvent;
     type Dispatcher = Hyperbridge;
