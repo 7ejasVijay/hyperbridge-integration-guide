@@ -1,15 +1,20 @@
 # [Hyperbridge](https://hyperbridge.network/) Integration Guide
 
-## 📘 Overview
+This guide walks through the steps required to integrate **Hyperbridge** for cross-chain asset transfers
 
-This guide walks through the steps required to integrate **Hyperbridge** for cross-chain asset transfers between:
+## Prerequisites
 
-- Substrate
-- EVM (e.g. Sepolia)
+Rust version used for this integration is **1.89.0** \
+Polkadot SDK version used for this integration is **stable2503**
 
 ---
 
-## 🧱 Prerequisites
+## #1 Pallets Integration
+
+The first step to use the protocol is to integrate the pallets in your runtime \
+[Click here to view pallets integration guide](docs/pallets.md)
+
+Once this is done
 
 - Access to:
   - Substrate chain (with `tokenGateway` pallet)
