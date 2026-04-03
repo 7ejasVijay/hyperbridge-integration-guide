@@ -29,31 +29,20 @@ parameter_types! {
 }
 
 impl pallet_ismp::Config for Runtime {
-    // configure the runtime event
     type RuntimeEvent = RuntimeEvent;
-    // Permissioned origin who can create or update consensus clients
     type AdminOrigin = EnsureRoot<AccountId>; // You can add council here as well
-    // The state machine identifier for this state machine
     type HostStateMachine = HostStateMachine;
-    // The pallet_timestamp pallet
     type TimestampProvider = Timestamp;
-    // The currency implementation that is offered to relayers
     type Currency = Balances;
-    // The balance type for the currency implementation
     type Balance = Balance;
-    // Router implementation for routing requests/responses to their respective modules
     type Router = Router;
-    // Optional coprocessor for incoming requests/responses
     type Coprocessor = Coprocessor;
     // Supported consensus clients
-	  //type ConsensusClients = (ismp_parachain::ParachainConsensusClient<Runtime, IsmpParachain>,);
-	  type ConsensusClients = (
+	//type ConsensusClients = (ismp_parachain::ParachainConsensusClient<Runtime, IsmpParachain>,);
+	type ConsensusClients = (
         ismp_grandpa::consensus::GrandpaConsensusClient<Runtime>,
     );
-    // Offchain database implementation. Outgoing requests and responses are
-    // inserted in this database, while their commitments are stored onchain.
     type OffchainDB = ();
-    // The fee handler implementation
     type FeeHandler = WeightFeeHandler<()>;
 }
 
@@ -71,5 +60,22 @@ impl IsmpRouter for Router {
             _ => Err(IsmpError::ModuleNotFound(id))?,
         }
     }
+}
+```
+
+Add the pallet token gateway configuration
+
+```rust
+impl pallet_token_gateway::Config for Runtime {
+    type RuntimeEvent = RuntimeEvent;
+    type Dispatcher = Hyperbridge;
+    type NativeCurrency = Balances;
+    type AssetAdmin = AssetAdmin;
+    type CreateOrigin = EnsureRoot<AccountId>;
+    type Assets = Assets;
+    type NativeAssetId = NativeAssetId;
+    type Decimals = Decimals;
+    type EvmToSubstrate = ();
+    type WeightInfo = ();
 }
 ```
