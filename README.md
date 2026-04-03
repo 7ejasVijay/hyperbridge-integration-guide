@@ -155,4 +155,4 @@ Required for Token Gateway to recognize assets for teleport
 - Ensure sufficient fees
 - Ensure roles are properly assigned
 
-[Request Flow](docs/test.md)
+[Request Flow](docs/pallets.md)

@@ -22,10 +22,10 @@ Add the ismp pallet configuration
 parameter_types! {
     // For example, the hyperbridge parachain on Polkadot
     pub const Coprocessor: Option<StateMachine> = Some(StateMachine::Polkadot(3367));
-    // The host state machine of this pallet, your state machine id goes here
-    pub const HostStateMachine: StateMachine = StateMachine::Polkadot(1000); // polkadot
-    // pub const HostStateMachine: StateMachine = StateMachine::Kusama(1000); // kusama
-    // pub const HostStateMachine: StateMachine = StateMachine::Substrate(*b"MYID"); // solochain (You can add any 4 letter chars here)
+    // pub const HostStateMachine: StateMachine = StateMachine::Polkadot(1000); // polkadot (For parachain)
+    // pub const HostStateMachine: StateMachine = StateMachine::Kusama(1000); // kusama (For parachain)
+    pub const HostStateMachine: StateMachine = StateMachine::Substrate(*b"MYID"); // solochain (You can add any 4 chars)
+    // Here MYID is the state machine id
 }
 
 impl pallet_ismp::Config for Runtime {
