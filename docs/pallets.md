@@ -157,3 +157,19 @@ impl pallet_ismp_runtime_api::IsmpRuntimeApi<Block, <Block as BlockT>::Hash> for
     }
 }
 ```
+
+Add to the runtime (or construct_runtime!) macro
+
+```rust
+#[runtime::pallet_index(1)]
+pub type Ismp = pallet_ismp::Pallet<Runtime>;
+
+#[runtime::pallet_index(2)]
+pub type IsmpGrandpa = ismp_grandpa::Pallet<Runtime>;
+
+#[runtime::pallet_index(3)]
+pub type Hyperbridge = pallet_hyperbridge::Pallet<Runtime>;
+
+#[runtime::pallet_index(4)]
+pub type TokenGateway = pallet_token_gateway::Pallet<Runtime>;
+```
