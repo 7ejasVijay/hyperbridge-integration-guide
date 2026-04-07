@@ -16,7 +16,7 @@ pallet-token-gateway = { version = "=2503.1.0", default-features = false }
 
 ### ⚙️ 2. Runtime Configuration
 
-> 🔹 2.1 Configure ISMP Pallet with Router
+> 🔹 **2.1** Configure ISMP Pallet with Router
 
 ```rust
 parameter_types! {
@@ -63,9 +63,7 @@ impl IsmpRouter for Router {
 }
 ```
 
-<br />
-
-> 🔹 2.2 Token Gateway Configuration
+> 🔹 **2.2** Token Gateway Configuration
 
 ```rust
 // Should provide an account that is funded and can be used to pay for asset creation
@@ -91,7 +89,7 @@ impl pallet_token_gateway::Config for Runtime {
 }
 ```
 
-> 🔹 2.3 ISMP GRANDPA Configuration
+> 🔹 **2.3** ISMP GRANDPA Configuration
 
 ```rust
 impl ismp_grandpa::Config for Runtime {
@@ -102,7 +100,7 @@ impl ismp_grandpa::Config for Runtime {
 }
 ```
 
-> 🔹 2.4 Hyperbridge Configuration
+> 🔹 **2.4** Hyperbridge Configuration
 
 ```rust
 impl pallet_hyperbridge::Config for Runtime {
@@ -111,7 +109,7 @@ impl pallet_hyperbridge::Config for Runtime {
 }
 ```
 
-> 🔹 2.5 Runtime API
+> 🔹 **2.5** Runtime API
 
 ```rust
 impl pallet_ismp_runtime_api::IsmpRuntimeApi<Block, <Block as BlockT>::Hash> for Runtime {
