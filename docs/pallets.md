@@ -1,8 +1,8 @@
 # Pallets Integration
 
-### This is first thing that needs to be done
+### 📦 1. Add Dependencies
 
-## In cargo.toml (Choose any suitable version for the pallets)
+> Add the following to your `Cargo.toml`:
 
 ```toml
 ismp = { version = "=1.2.0", default-features = false }
@@ -14,9 +14,9 @@ pallet-hyperbridge = { version = "=2503.1.0", default-features = false }
 pallet-token-gateway = { version = "=2503.1.0", default-features = false }
 ```
 
-## Add the configurations to your runtime
+### ⚙️ 2. Runtime Configuration
 
-Add the ismp pallet configuration
+> 🔹 2.1 Configure ISMP Pallet with Router
 
 ```rust
 parameter_types! {
@@ -63,7 +63,7 @@ impl IsmpRouter for Router {
 }
 ```
 
-Add the pallet token gateway configuration
+> 🔹 2.2 Token Gateway Configuration
 
 ```rust
 // Should provide an account that is funded and can be used to pay for asset creation
@@ -89,7 +89,7 @@ impl pallet_token_gateway::Config for Runtime {
 }
 ```
 
-Add the pallet ismp grandpa configuration
+> 🔹 2.3 ISMP GRANDPA Configuration
 
 ```rust
 impl ismp_grandpa::Config for Runtime {
@@ -100,7 +100,7 @@ impl ismp_grandpa::Config for Runtime {
 }
 ```
 
-Add the pallet hyperbridge configuration
+> 🔹 2.4 Hyperbridge Configuration
 
 ```rust
 impl pallet_hyperbridge::Config for Runtime {
@@ -109,7 +109,7 @@ impl pallet_hyperbridge::Config for Runtime {
 }
 ```
 
-Add pallet ismp runtime apis
+> 🔹 2.5 Runtime API
 
 ```rust
 impl pallet_ismp_runtime_api::IsmpRuntimeApi<Block, <Block as BlockT>::Hash> for Runtime {
@@ -158,7 +158,9 @@ impl pallet_ismp_runtime_api::IsmpRuntimeApi<Block, <Block as BlockT>::Hash> for
 }
 ```
 
-Add to the runtime (or construct_runtime!) macro
+### 🏗️ 3. Add Pallets to Runtime
+
+Add these to your `construct_runtime!`
 
 ```rust
 #[runtime::pallet_index(1)]
