@@ -1,4 +1,4 @@
-# Pallets Integration
+# Integration of pallets to runtime
 
 ### 📦 1. Add Dependencies
 
