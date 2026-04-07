@@ -2,7 +2,7 @@
 
 ### 📦 1. Add Dependencies
 
-> Add the following to your `Cargo.toml`:
+> Add the following to your `Cargo.toml`
 
 ```toml
 ismp = { version = "=1.2.0", default-features = false }
@@ -62,6 +62,8 @@ impl IsmpRouter for Router {
     }
 }
 ```
+
+<br />
 
 > 🔹 2.2 Token Gateway Configuration
 
