@@ -7,24 +7,12 @@ This guide walks through the steps required to integrate **Hyperbridge** for cro
 Rust version used for this integration is **1.89.0** \
 Polkadot SDK version used for this integration is **stable2503**
 
----
-
 ## #1 Pallets Integration
 
 The first step to use the protocol is to integrate the pallets in your runtime \
 [Click here to view pallets integration guide](docs/pallets.md)
 
-Once this is done
-
-- Access to:
-  - Substrate chain (with `tokenGateway` pallet)
-  - Sepolia Ethereum RPC
-- Installed relayers
-- Testnet funds:
-  - Native token
-  - `USD.h` (fee token)
-
----
+Once this is done verify that the pallets are successfully integrated using the [polkadot explorer](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F127.0.0.1%3A9944#/extrinsics)
 
 ## ⚙️ Step-by-Step Integration
 
