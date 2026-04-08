@@ -9,10 +9,11 @@ Polkadot SDK version used for this integration is **stable2503**
 
 ## #1 Pallets Integration
 
-The first step is to integrate the pallets in your runtime \
-[Click here to view pallets integration guide](docs/pallets.md)
+The first step is to integrate the pallets in your runtime. \
+[Click here to follow the pallets integration guide](docs/pallets.md)
 
-Once this is done verify that the pallets are successfully integrated using the [polkadot explorer](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F127.0.0.1%3A9944#/extrinsics)
+Once this is done, verify that the pallets are successfully integrated. \
+[Click here to use the polkadot explorer](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F127.0.0.1%3A9944#/extrinsics)
 
 ## ⚙️ Step-by-Step Integration
 
