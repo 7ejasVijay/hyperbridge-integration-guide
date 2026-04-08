@@ -5,7 +5,7 @@ This guide walks through the steps required to integrate **Hyperbridge** for cro
 ## Prerequisites
 
 Rust version used for this integration is **1.89.0** \
-Polkadot SDK version used for this integration is **stable2503**
+Polkadot SDK version used for this integration is tag: [**polkadot-stable2503-7**](https://github.com/paritytech/polkadot-sdk/tree/polkadot-stable2503-7)
 
 ## #1 Pallets Integration
 
@@ -14,6 +14,10 @@ The first step is to integrate the pallets in your runtime. \
 
 Once this is done, verify that the pallets are successfully integrated. \
 [Click here to use the polkadot explorer](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F127.0.0.1%3A9944#/extrinsics)
+
+## #2 Start Consensus Relayer
+
+in progress..
 
 ## ⚙️ Step-by-Step Integration
 
