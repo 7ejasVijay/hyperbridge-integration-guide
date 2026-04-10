@@ -42,7 +42,8 @@ type = "grandpa"
 
 [polkadex.substrate]
 # Solochains's websocket RPC
-rpc_ws = "wss://polkadex-testnet.polkadex.ee"
+# Your chain's wss rpc url
+rpc_ws = ""
 # Hashing can be "Keccak" or "Blake2"
 hashing = "Blake2"
 # Solochains's consensus state id on Hyperbridge
