@@ -37,10 +37,10 @@ state_machine = "KUSAMA-4009"
 signer = ""
 
 # can use any key here
-[polkadex]
+[YourSolochain]
 type = "grandpa"
 
-[polkadex.substrate]
+[YourSolochain.substrate]
 # Solochains's websocket RPC
 # Your chain's wss rpc url
 rpc_ws = ""
@@ -54,7 +54,7 @@ state_machine = "SUBSTRATE-MYID"
 # Relayer account seed (Private Key of your substrate wallet)
 signer = ""
 
-[polkadex.grandpa]
+[YourSolochain.grandpa]
 # Solochains's websocket RPC
 # Your chain's wss rpc url
 rpc = ""
