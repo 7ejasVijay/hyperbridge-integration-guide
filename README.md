@@ -17,7 +17,8 @@ Once this is done, verify that the pallets are successfully integrated. \
 
 ## #2 Start Consensus Relayer
 
-in progress..
+Next is to run the consensus relayer that validates state proofs. \
+[Click here to run the consensus relayer](docs/consensus.md)
 
 ## ⚙️ Step-by-Step Integration
 
