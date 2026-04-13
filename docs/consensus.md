@@ -1,6 +1,6 @@
 # Consensus Relayer
 
-> A consensus relayer is also provided, which is responsible for exchanging finality proofs of cross-chain messages.
+> A consensus relayer is responsible for exchanging finality proofs of cross-chain messages.
 
 ```toml
 # Required
