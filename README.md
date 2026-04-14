@@ -20,7 +20,7 @@ Once this is done, verify that the pallets are successfully integrated. \
 Next is to run the consensus relayer that validates state proofs. \
 [Click here to run the consensus relayer](docs/consensus.md)
 
-## #2 Start Messaging Relayer
+## #3 Start Messaging Relayer
 
 Next is to run the messaging relayer that is responsible for cross chain transfers of messages and tokens. \
 [Click here to run the messaging relayer](docs/messaging.md)
