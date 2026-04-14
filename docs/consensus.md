@@ -2,6 +2,24 @@
 
 > A consensus relayer is responsible for exchanging finality proofs of cross-chain messages.
 
+You have already add the `ismp-grandpa` to your runtime
+
+### Whitelisting State Machines
+
+The ismp-grandpa pallet requires state machines to be whitelisted before any consensus proofs can be accepted. This ensures that solochains are not spammed with consensus proofs of unwanted chains.
+
+![Adding State Machines](https://docs.hyperbridge.network/add_state_machine.png)
+
+### Configuring the relayer
+
+Pull the image of the consensus relayer
+
+```shell
+$ docker pull polytopelabs/tesseract-consensus:latest
+```
+
+Copy the consensus configuration and add the necessary creds so that the container can run with this toml
+
 ```toml
 # Required
 [hyperbridge]
@@ -44,8 +62,7 @@ type = "grandpa"
 
 [YourSolochain.substrate]
 # Solochains's websocket RPC
-# Your chain's wss rpc url
-rpc_ws = ""
+rpc_ws = "<Your chain's wss rpc url>"
 # Hashing can be "Keccak" or "Blake2"
 hashing = "Blake2"
 # Solochains's consensus state id on Hyperbridge
@@ -58,8 +75,7 @@ signer = ""
 
 [YourSolochain.grandpa]
 # Solochains's websocket RPC
-# Your chain's wss rpc url
-rpc = ""
+rpc = "<Your chain's wss rpc url>"
 # Solochains's slot duration
 slot_duration = 12000
 # How frequently to exchange consensus proofs
@@ -70,3 +86,22 @@ para_ids = []
 [relayer]
 maximum_update_intervals = []
 ```
+
+### Consensus State Initialization
+
+Before running the relayer, you must first initialize Hyperbridge's consensus state on your solochain.
+
+```shell
+$ docker run \
+    --network=host \
+    -v /path/to/consensus.toml:/root/consensus.toml \
+    polytopelabs/tesseract-consensus:latest \
+    --config=/root/consensus.toml \
+    log-consensus-state KUSAMA-4009
+```
+
+This should print out a potentially long hex string. Next you'll use this hex string to initialize the Hyperbridge consensus state on your solochain through an extrinsic as shown below.
+
+![Adding State Machines](https://docs.hyperbridge.network/grnp_init.png)
+
+Reference: [Consensus document for hyperbridge](https://docs.hyperbridge.network/developers/polkadot/solochains/)
