@@ -104,4 +104,17 @@ This should print out a potentially long hex string. Next you'll use this hex st
 
 ![Adding State Machines](https://docs.hyperbridge.network/grnp_init.png)
 
+Once this is completed on your solochain, the same will need to also be executed on Hyperbridge's side. You will need to get the consensus state from your chain using the following command.
+
+```shell
+$ docker run \
+    --network=host \
+    -v /path/to/consensus.toml:/root/consensus.toml \
+    polytopelabs/tesseract-consensus:latest \
+    --config=/root/consensus.toml \
+    log-consensus-state SUBSTRATE-MYID
+```
+
+> You will need to share the consensus state of your chain with the hyperbridge team by [creating an issue on github](https://github.com/polytope-labs/hyperbridge/issues/new).
+
 Reference: [Consensus document for hyperbridge](https://docs.hyperbridge.network/developers/polkadot/solochains/)
