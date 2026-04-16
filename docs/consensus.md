@@ -117,4 +117,24 @@ $ docker run \
 
 > You will need to share the consensus state of your chain with the hyperbridge team by [creating an issue on github](https://github.com/polytope-labs/hyperbridge/issues/new).
 
+### Running the relayer
+
+Once all consensus states are set up, running the relayer is as easy as:
+
+```shell
+$ docker run -d \
+    --name=consensus \
+    --restart=always \
+    --network=host \
+    --config=/root/consensus.toml \
+    -v /path/to/consensus.toml:/root/consensus.toml \
+        polytopelabs/tesseract-consensus:latest
+```
+
+Access it's logs via
+
+```shell
+docker logs -f consensus
+```
+
 Reference: [Consensus document for hyperbridge](https://docs.hyperbridge.network/developers/polkadot/solochains/)
