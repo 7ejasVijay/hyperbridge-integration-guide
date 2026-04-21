@@ -42,7 +42,7 @@ para_ids = [4009]
 
 [hyperbridge.substrate]
 # Hyperbridge's relay chain websocket RPC
-rpc_ws = "wss://hyperbridge-paseo-rpc.blockops.network"
+rpc_ws = "<Hyperbridge chain websocket url>"
 # Hyperbridge's hashing algorithm
 hashing = "Keccak"
 # Hyperbridge's consensus state id
