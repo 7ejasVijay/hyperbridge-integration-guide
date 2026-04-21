@@ -13,7 +13,7 @@ state_machine = "KUSAMA-4009"
 hashing = "Keccak"
 
 # Hyperbridge node ws rpc endpoint.
-rpc_ws = "wss://hyperbridge-paseo-rpc.blockops.network" # example endpoint
+rpc_ws = "<Hyperbridge chain websocket url>" # example endpoint
 
 # hex-encoded private key for the relayer account on Hyperbridge.
 # This is the private key to the Hyperbridge account where you earn BRIDGE token rewards (Your polkadot wallet private key)
