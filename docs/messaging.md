@@ -214,3 +214,28 @@ signer = ""
 # It defaults to 6 which is the decimal for USDC and USDT on Polkadot parachains
 # fee_token_decimals = 6
 ```
+
+### Running the relayer
+
+The tesseract relayer command line interface expects two arguments, which are the paths to its configuration file and database file. If you're running it in a docker container, you will need to map the directory where you've stored the configuration files on your host into the docker container. Tesseract will write its database to that directory once it's initialized.
+
+```bash
+docker run -d \
+  --name=tesseract \
+  --network=host \
+  --restart=always \
+  --volume=/dir/on/host:/home/root \
+  polytopelabs/tesseract:latest \
+  --config=/home/root/config.toml \
+  --db=/home/root/tesseract.db
+```
+
+Access its logs using
+
+```shell
+docker logs -f tesseract
+```
+
+### System Requirements
+
+At the minimum, the hyperbridge relayer should be run on a machine with at least 4GB of RAM and a quad-core cpu. This relayer should also have at least a 100Mb/s connection if it is to query nodes over the internet.
