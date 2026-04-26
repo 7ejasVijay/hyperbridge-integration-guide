@@ -25,6 +25,10 @@ Next is to run the consensus relayer that validates state proofs. \
 Next is to run the messaging relayer that is responsible for cross chain transfers of messages and tokens. \
 [Click here to run the messaging relayer](docs/messaging.md)
 
+## #4 Set the Token Gateway Address in your chain
+
+.. in progress
+
 ## ⚙️ Step-by-Step Integration
 
 ### 1. Start Consensus Relayer
