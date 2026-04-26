@@ -4,6 +4,16 @@ A Messaging Relayer is an off-chain service that facilitates the transfer of mes
 
 It listens for events on a source chain, extracts relevant data, and submits it to a destination chain, enabling cross-chain communication.
 
+### Availability
+
+Tesseract is available at the official docker repository polytopelabs/tesseract
+
+```shell
+docker pull polytopelabs/tesseract:latest
+```
+
+### Configuration
+
 ```toml
 # Hyperbridge config, required
 [hyperbridge]
